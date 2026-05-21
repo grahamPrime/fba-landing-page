@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Project: FBA Landing Page
+    Version: vNext r2 preserved-style — 05-13-26
+    Notes:
+    - Preserves uploaded earlier styles.css as base
+    - Shortened hero headline
+    - Adds Drive video autoplay attempt
+    - Adds above-fold coach bio access
+    - Converts modules to accordions
+    - Adds Netlify success page routing
+    - References assets/Maddie Binks.png; add this file before Netlify deploy
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FBA — Build a Profitable Aesthetic Clinic</title>
+  <meta name="description" content="A Mini MBA for aesthetic clinic owners who want the systems, operations, marketing, and financial frameworks to grow with confidence." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Netlify static form detector -->
+  <form name="fba-waitlist" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="fba-waitlist" />
+          <input type="hidden" name="redirect" value="./thanks.html" />
+    <input name="bot-field" />
+    <input type="text" name="first_name" />
+    <input type="text" name="last_name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="current_stage">
+      <option>Planning to launch</option>
+      <option>Recently launched</option>
+      <option>Operating and growing</option>
+      <option>Clinic manager/operator</option>
+      <option>Interested in consulting</option>
+    </select>
+    <input type="hidden" name="email_subject" value="Waitlist application from" />
+  </form>
+
+
+  <!-- NAV -->
+  <header class="px-6 lg:px-16 py-6 bg-[#F7F7F7]/90 backdrop-blur border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-[#333333] text-white flex items-center justify-center font-bold tracking-widest">
+          FBA
+        </div>
+        <div class="hidden sm:block text-sm uppercase tracking-[0.2em] font-bold">
+          Foundation for Business Aesthetics
+        </div>
+      </a>
+
+      <nav class="flex flex-wrap items-center gap-5 text-sm text-gray-600">
+        <a href="#curriculum" class="hover:text-[#333333]">Mini MBA</a>
+        <a href="#testimonials" class="hover:text-[#333333]">Testimonials</a>
+        <a href="#coach" class="hover:text-[#333333]">Meet Your Coach</a>
+        <a href="#waitlist" class="btn-primary px-5 py-3 rounded-full">Join Waitlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO VIDEO -->
+    <section class="px-6 lg:px-16 pt-10">
+      <div class="max-w-7xl mx-auto hero-video-placeholder">
+        <div class="video-stage">
+            <iframe
+              id="fba-vimeo-player"
+              class="video-frame"
+              src="https://player.vimeo.com/video/1192059687?autoplay=1&muted=0&loop=0&playsinline=1&title=0&byline=0&portrait=0"
+              title="FBA intro video"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+
+            <div class="video-end-thumbnail" aria-hidden="true">
+              <img src="assets/Maddie Binks.png" alt="Madeleine Binks, MBA" />
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- HERO -->
+    <section class="flex items-center px-6 lg:px-16 py-20">
+      <div class="max-w-5xl mx-auto">
+        <div>
+          <div class="section-label mb-6">
+            Mini-MBA for Aesthetic Clinic Owners
+          </div>
+
+          <h1 class="display-font hero-title-compact text-5xl lg:text-6xl leading-tight mb-8">
+            Add business skills to your clinical expertise.
+          </h1>
+
+          <p class="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl">
+            A Mini MBA for aesthetic clinic owners who want the systems, operations, marketing, and financial frameworks to grow with confidence.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#waitlist" class="btn-primary px-8 py-4 rounded-full text-lg">
+              Join the Waitlist
+            </a>
+
+            <a href="#curriculum" class="btn-secondary border border-gray-300 px-8 py-4 rounded-full text-lg">
+              View Curriculum
+            </a>
+          </div>
+
+          <div class="mt-12 flex flex-wrap gap-3 text-sm text-gray-500">
+            <span>Clinic Owners</span>
+            <span>•</span>
+            <span>Medspa Managers</span>
+            <span>•</span>
+            <span>Physicians</span>
+            <span>•</span>
+            <span>Nurses</span>
+            <span>•</span>
+            <span>Aesthetic Providers</span>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- CURRENT STATE VS DESIRED STATE -->
+    <section class="px-6 lg:px-16 py-28 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <div class="section-label mb-6">The Transformation</div>
+          <h2 class="display-font text-4xl lg:text-5xl mb-8">
+            From overwhelmed operator to confident clinic owner.
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="card-soft">
+            <div class="section-label mb-4">Before FBA</div>
+            <h3 class="text-2xl font-bold mb-6">Clinic ownership feels heavier than it should.</h3>
+
+            <ul class="space-y-4 text-gray-600">
+              <li>• Frustrated by growth that's unpredictable month to month</li>
+              <li>• Disheartened by patients who leave and never come back</li>
+              <li>• Anxious about whether there's enough money at the end of the month</li>
+              <li>• Overwhelmed by wearing every hat with no off switch</li>
+              <li>• Exhausted by always reacting instead of leading</li>
+              <li>• Drained by trying things that never quite stick</li>
+              <li>• Burnt out from doing manually what should run itself</li>
+            </ul>
+          </div>
+
+          <div class="card-highlight">
+            <div class="section-label mb-4">After FBA</div>
+            <h3 class="text-2xl font-bold mb-6">You lead with clarity, structure, and control.</h3>
+
+            <ul class="space-y-4 text-gray-700">
+              <li>• Confident in a growth strategy that actually makes sense</li>
+              <li>• Relieved that patients come back without you chasing them</li>
+              <li>• Assured by numbers you understand and trust</li>
+              <li>• Freed from the chaos by systems that run without you</li>
+              <li>• Excited by growth that doesn't break everything</li>
+              <li>• Clear-headed with a clinic you can actually lead</li>
+              <li>• Proud of a business that grows without costing your wellbeing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="anchor-offset px-6 lg:px-16 py-28">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <div class="section-label mb-6">Testimonials</div>
+          <h2 class="display-font text-4xl lg:text-5xl mb-8">
+            Practical systems. Real relief. Immediate momentum.
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="card-soft">
+            <p class="text-gray-700 leading-relaxed">
+              “I've done other business courses and always walked away with a head full of theory and no idea what to actually do on Monday morning. This was completely different. Every concept was broken into steps I could action immediately. Within two weeks I had systems in place I'd been putting off for months. I finally feel like I'm running my clinic — not drowning in it.”
+            </p>
+            <p class="font-bold mt-8 text-gray-500">Brianne</p>
+          </div>
+
+          <div class="card-soft">
+            <p class="text-gray-700 leading-relaxed">
+              “What surprised me most about this course wasn't the strategies — it was how quickly the overwhelm lifted once I had a place and process. My brain isn't constantly confused anymore. I actually finish the day knowing I've moved the things in the right direction.”
+            </p>
+            <p class="font-bold mt-8 text-gray-500">Tania</p>
+          </div>
+
+          <div class="card-soft">
+            <p class="text-gray-700 leading-relaxed">
+              “The email marketing timeline changed everything for me. I'd been sending the odd email here and there and wondering why no one responded. Once I implemented the sequence — exactly as it was laid out — I started getting replies within days. I've had four consult bookings in the last three weeks just from the follow-up emails alone.”
+            </p>
+            <p class="font-bold mt-8 text-gray-500">Loretta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRICULUM ACCORDION -->
+    <section id="curriculum" class="anchor-offset px-6 lg:px-16 py-28 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <div class="section-label mb-6">What You’ll Build Along The Way</div>
+          <h2 class="display-font text-4xl lg:text-5xl mb-8">
+            The business foundation most practitioners were never taught.
+          </h2>
+        </div>
+
+        <div class="accordion">
+          <details class="accordion-item" open>
+            <summary>Strategic Business Foundations</summary>
+            <div class="accordion-body">
+              <p>Position your clinic clearly, define your audience, and build a practical strategy for growth.</p>
+              <ul class="mt-4 space-y-2">
+                <li>• Positioning</li>
+                <li>• Pricing</li>
+                <li>• Patient acquisition</li>
+                <li>• Financial planning</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary>Operational Infrastructure</summary>
+            <div class="accordion-body">
+              <p>Create repeatable systems so the clinic runs with less chaos and fewer manual handoffs.</p>
+              <ul class="mt-4 space-y-2">
+                <li>• SOPs</li>
+                <li>• Consultation systems</li>
+                <li>• Team workflows</li>
+                <li>• Retention systems</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary>Marketing & Growth Systems</summary>
+            <div class="accordion-body">
+              <p>Build trust, nurture leads, improve follow-up, and turn interest into booked consultations.</p>
+              <ul class="mt-4 space-y-2">
+                <li>• Patient retention</li>
+                <li>• Brand trust</li>
+                <li>• Referral growth</li>
+                <li>• Marketing strategy</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary>Leadership & Ownership</summary>
+            <div class="accordion-body">
+              <p>Move from reacting all day to leading a business with clarity and confidence.</p>
+              <ul class="mt-4 space-y-2">
+                <li>• Decision-making frameworks</li>
+                <li>• Sustainable growth planning</li>
+                <li>• Clinic maturity systems</li>
+                <li>• Founder mindset</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET YOUR COACH -->
+    <section id="coach" class="anchor-offset px-6 lg:px-16 py-28">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <div class="section-label mb-6">Meet Your Coach</div>
+          <h2 class="display-font text-4xl lg:text-5xl mb-4">
+            Madeleine Binks, MBA
+          </h2>
+        </div>
+
+        <div class="coach-photo-wrap mb-10">
+          <img
+            class="coach-photo"
+            src="assets/Maddie Binks.png"
+            alt="Madeleine Binks, MBA"
+          />
+        </div>
+
+        <div class="card-soft">
+          <div class="space-y-5 text-lg text-gray-600 leading-relaxed">
+              <p>Maddie holds an MBA and has spent the last five years working directly with over 100 healthcare providers to help them build businesses that actually function — not just clinically, but operationally and financially.</p>
+              <p>She understands the specific pressures clinic owners face because she's partnered with them at every stage: early overwhelm, plateau, and scale. Her approach is methodical without being rigid, and strategic without losing sight of the day-to-day reality of running a practice.</p>
+              <p>Maddie doesn't deal in generic business advice. Everything she teaches is built around what works in healthcare — the retention challenges, the staffing dynamics, the gap between clinical excellence and commercial sustainability.</p>
+              <p class="font-bold text-[#333333]">If you're looking for someone who will tell you exactly what to do and why it works, you're in the right place.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTING CTA -->
+    <section id="consulting" class="anchor-offset px-6 lg:px-16 py-24 bg-white">
+      <div class="max-w-7xl mx-auto brand-beige rounded-[40px] p-10 lg:p-16 grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+        <div>
+          <div class="section-label mb-6">Need Hands-On Support?</div>
+          <h2 class="display-font text-4xl lg:text-5xl mb-6">
+            For clinic owners who want personalized implementation support.
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl">
+            Apply for private coaching if you want hands-on help with strategy, clinic audits, marketing systems, sales and consultation training, or operational implementation.
+          </p>
+        </div>
+
+        <a href="#waitlist" class="btn-primary px-8 py-4 rounded-full text-lg text-center js-consulting-cta">
+          Apply for Consulting
+        </a>
+      </div>
+    </section>
+
+    <!-- WAITLIST -->
+    <section id="waitlist" class="anchor-offset px-6 lg:px-16 py-28 bg-[#333333] text-white">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <div class="section-label mb-6 text-gray-300">Join The Waitlist</div>
+          <h2 class="display-font text-4xl lg:text-5xl mb-8">
+            Build the clinic you actually want to run.
+          </h2>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+            Stop guessing your way through clinic ownership. Build sustainable systems, improve profitability, and create a patient-centered business designed for long-term growth.
+          </p>
+        </div>
+
+        <form
+          class="waitlist-form card-soft text-[#333333]"
+          name="fba-waitlist"
+          method="POST"
+          action="./thanks.html"
+          data-netlify="true"
+          netlify
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="fba-waitlist" />
+          <input type="hidden" name="redirect" value="./thanks.html" />
+          <input type="hidden" name="email_subject" id="email_subject" value="Waitlist application from" />
+
+          <p class="hidden-field">
+            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <label>
+              <span>First Name</span>
+              <input class="field" type="text" name="first_name" id="first_name" placeholder="Jane" required />
+            </label>
+
+            <label>
+              <span>Last Name</span>
+              <input class="field" type="text" name="last_name" id="last_name" placeholder="Smith" required />
+            </label>
+          </div>
+
+          <label>
+            <span>Email</span>
+            <input class="field" type="email" name="email" id="email" placeholder="jane@example.com" required />
+          </label>
+
+          <label>
+            <span>Phone Number</span>
+            <input class="field" type="tel" name="phone" placeholder="(555) 555-5555" required />
+          </label>
+
+          <label>
+            <span>Current Stage</span>
+            <select class="field" name="current_stage" id="current_stage">
+              <option value="">Select one</option>
+              <option>Planning to launch</option>
+              <option>Recently launched</option>
+              <option>Operating and growing</option>
+              <option>Clinic manager/operator</option>
+              <option>Interested in consulting</option>
+            </select>
+          </label>
+
+          <button type="submit" class="btn-primary w-full px-8 py-4 rounded-full text-lg mt-2">
+            Join the Waitlist
+          </button>
+
+          <p class="text-sm text-gray-500 mt-4">
+            We’ll send launch updates and next-step details. No spam.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer px-6 lg:px-16 py-8">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between gap-4 text-sm text-gray-300">
+      <p>© 2026 FBA. All rights reserved.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
