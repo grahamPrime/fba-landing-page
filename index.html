@@ -33,7 +33,6 @@
   <!-- Netlify static form detector -->
   <form name="fba-waitlist" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
     <input type="hidden" name="form-name" value="fba-waitlist" />
-          <input type="hidden" name="redirect" value="./thanks.html" />
     <input name="bot-field" />
     <input type="text" name="first_name" />
     <input type="text" name="last_name" />
@@ -342,16 +341,15 @@
         </div>
 
         <form
-          class="waitlist-form card-soft text-[#333333]"
+          id="waitlist-form" class="waitlist-form card-soft text-[#333333]"
           name="fba-waitlist"
           method="POST"
-          action="./thanks.html"
+          
           data-netlify="true"
           netlify
           netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="fba-waitlist" />
-          <input type="hidden" name="redirect" value="./thanks.html" />
           <input type="hidden" name="email_subject" id="email_subject" value="Waitlist application from" />
 
           <p class="hidden-field">
@@ -400,6 +398,20 @@
             We’ll send launch updates and next-step details. No spam.
           </p>
         </form>
+
+        <div id="waitlist-success" class="card-soft text-[#333333] hidden">
+          <div class="section-label mb-6">Application Received</div>
+          <h3 class="display-font text-4xl lg:text-5xl leading-tight mb-6">
+            Thanks for applying—we will be in touch shortly!
+          </h3>
+          <p class="text-lg text-gray-600 mb-8">
+            Your waitlist application has been received.
+          </p>
+          <a href="#top" class="btn-primary px-8 py-4 rounded-full text-lg inline-block">
+            Return to Main Page
+          </a>
+        </div>
+
       </div>
     </section>
   </main>

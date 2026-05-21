@@ -156,3 +156,11 @@ If Netlify notification templates are available in your plan/workspace, use that
 - Replaced thank-you page styling with inline CSS.
 - Removes reliance on Tailwind CDN or external `styles.css` path after Netlify form redirect.
 - Keeps same FBA visual language and Return to Main Page button.
+
+
+## r14 Inline Success Fix
+
+- Removed fragile post-submit redirect.
+- Form now submits to Netlify using AJAX/fetch.
+- On success, the form hides and a styled success card appears inline on the same page.
+- This avoids Netlify's default unstyled success page entirely.
